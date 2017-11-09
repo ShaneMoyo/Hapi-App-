@@ -1,0 +1,27 @@
+{
+  "name": "hapi-app-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "hapi": "^16.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShaneMoyo/Hapi-App-.git"
+  },
+  "author": "Shane Moyo <smoyo@pdx.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShaneMoyo/Hapi-App-/issues"
+  },
+  "homepage": "https://github.com/ShaneMoyo/Hapi-App-#readme"
+}
