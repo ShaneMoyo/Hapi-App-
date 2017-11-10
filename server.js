@@ -15,6 +15,14 @@ server.route({
     }
 });
 
+server.route({
+    method: 'GET',
+    path: '/',
+    handler: function(requet, reply){
+        reply('Root');
+    }
+});
+
 server.start(function() {
     console.log('Server running at: ', server.info.uri);
 });
