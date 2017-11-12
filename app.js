@@ -1,28 +1,38 @@
+
 const Hapi = require('hapi');
+
+const port = 4000;
 const server = new Hapi.Server();
-const db = require('./database').db;
-const Food = require('./lib/models/food');
-
-const routes = require('./routes');
-server.route(routes);
-
 server.connection({
     host: 'localhost',
-    port: 1337
+    port: port
 });
+
+const routes = require('./routes');
+
+server.route(routes);
 
 server.route({
     method: 'GET',
     path: '/',
-    handler: function (request, reply) {
-        reply('Hapi World!');
+    handler(request, reply) {
+        reply('Hello, world!');
     }
 });
 
-server.start((err) => {
+server.route({
+    method: 'GET',
+    path: '/api',
+    handler(request, reply) {
+        reply('Hello, API!');
+    }
+});
 
-if (err) {
+server.start(err => {
+    if (err) {
         throw err;
     }
-    console.log('Server running at: ${server.info.uri}');
+    console.log(`Server running at: ${server.info.uri}`);
 });
+
+exports.server = server;
