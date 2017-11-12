@@ -1,4 +1,3 @@
-'use strict';
 
 const Food = require('./models/food');
 
@@ -7,7 +6,7 @@ module.exports = [
         method: 'GET',
         path: '/api/foods',
         handler(request, reply) {
-            Food.find({}, '', function (error, foods) {
+            Food.find({}, '', (error, foods) => {
                 if (error) {
                     console.error(error);
                 }

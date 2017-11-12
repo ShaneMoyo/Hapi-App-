@@ -12,7 +12,7 @@ describe('hapi API', () => {
             payload: { name: 'pizza'}
         };
 
-        return server.inject(options, function (response) {
+        return server.inject(options, response => {
             assert.deepEqual(response.statusCode, 200);
             assert.deepEqual(response.result.name, 'pizza');
         });
@@ -24,7 +24,7 @@ describe('hapi API', () => {
             url: '/api'
         };
 
-        return server.inject(options, function (response) {
+        return server.inject(options, response => {
             assert.deepEqual(response.statusCode, 200);
             assert.deepEqual(typeof response.result, 'string');
         });
